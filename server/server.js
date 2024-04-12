@@ -10,6 +10,8 @@ const userRouter = require("./routes/userRoutes");
 const orderRouter = require("./routes/orderRoutes");
 const categoryRouter = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
+const path = require("path");
+
 
 dotenv.config();
 
@@ -20,6 +22,8 @@ connectDb();
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../client/build')));
+
 
 // Routes
 app.use('/api/v1/auth', authRouter);
@@ -29,8 +33,8 @@ app.use('/api/v1/category', categoryRouter);
 app.use("/api/v1/product", productRoutes);
 
 // Welcome message route
-app.get('/', (req, res) => {
-    res.send({ message: `Welcome to e-commerce` });
+app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 // Port configuration
