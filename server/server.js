@@ -12,7 +12,7 @@ const OAuth2Strategy = require("passport-google-oauth2").Strategy;
 // const bodyParser = require('body-parser');
 
 // mongoose.connect('mongodb://127.0.0.1:27017/test');
-const cors = require('cors');
+// const cors = require('cors');
 const connectDb = require('./config/db');
 
 
@@ -113,7 +113,7 @@ app.get('/', (req, res) => {
     res.send({ message: `Welcome to e-commerce` });
 })
 // app.use('/products')
-// dfd
+
 
 //morgan tell which api url is hit
 //Port
