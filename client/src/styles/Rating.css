@@ -1,0 +1,36 @@
+/* Styles for review section */
+.review-section {
+  margin-top: 20px;
+}
+.product-details-container {
+  width: 60vw;
+  display: flex;
+  justify-content: space-around;
+}
+/* Styles for review cards */
+.review-card {
+  height: 11vh;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.review-card .card-body {
+  padding: 15px;
+}
+
+.review-card p {
+  margin: 0;
+}
+
+.review-card .card-text {
+  margin-bottom: 5px;
+}
+
+.review-card strong {
+  font-weight: bold;
+  color: #333;
+}
+.asd {
+  margin-left: 400px;
+}
