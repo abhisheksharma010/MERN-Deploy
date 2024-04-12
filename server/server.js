@@ -30,7 +30,7 @@ connectDb();
 
 
 //middleware
-app.use(cors());
+// app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 // app.use(bodyParser.json());
