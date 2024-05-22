@@ -1,5 +1,4 @@
 
-```markdown
 # Purchase-Now – E-Commerce Website 🛍️
 
 Welcome to Purchase-Now, an e-commerce website where you can shop for your favorite items conveniently online. This repository contains the complete source code for the website, along with instructions on how to set it up locally and access the live version.
