@@ -18,7 +18,7 @@ To get a copy of this project up and running on your local machine, follow these
 
 2. **Install Dependencies**: Navigate to the project directory and install the necessary dependencies for both the backend and frontend. You can do this by running the following commands:
    ```bash
-   cd Purchase-Now
+   cd server
    npm install
    cd client
    npm install
@@ -28,6 +28,7 @@ To get a copy of this project up and running on your local machine, follow these
    - Option 1: Start the backend and frontend separately:
      ```bash
      # Start the backend server
+     cd server
      npm run start
      
      # Start the frontend server
@@ -37,6 +38,7 @@ To get a copy of this project up and running on your local machine, follow these
    - Option 2: Start both servers simultaneously using the development script:
      ```bash
      # Start both backend and frontend concurrently
+     cd server
      npm run dev
      ```
 
