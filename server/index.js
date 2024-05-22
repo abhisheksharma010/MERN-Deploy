@@ -12,7 +12,16 @@ const categoryRouter = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
 const path = require("path");
 const cors = require("cors");
-app.use(cors());
+const corsConfig = {
+    origin: "*", // Allow requests from any origin
+    credentials: true, // Allow credentials (e.g., cookies, authorization headers)
+    methods: ["GET", "PUT", "POST", "DELETE"] // Allow specified HTTP methods
+};
+
+app.options('*', cors(corsConfig));
+
+// Apply CORS middleware to all routes
+app.use(cors(corsConfig));
 import { fileURLToPath } from "url";
 
 dotenv.config();
