@@ -11,6 +11,8 @@ const orderRouter = require("./routes/orderRoutes");
 const categoryRouter = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
 const path = require("path");
+const cors = require("cors");
+app.use(cors());
 import { fileURLToPath } from "url";
 
 dotenv.config();
