@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className="scard m-2">
             <img
-                src={`/api/v1/product/product-photo/${product._id}`}
+                src={`https://yoy.onrender.com/api/v1/product/product-photo/${product._id}`}
                 alt="Card"
                 className="scard-image"
             />
