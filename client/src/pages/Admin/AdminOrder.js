@@ -98,7 +98,7 @@ const AdminOrders = () => {
                                         <div className="row mb-2 p-3 flex-row border" key={p._id}>
                                             <div className="col-md-4">
                                                 <img
-                                                    src={`/api/v1/product/product-photo/${p._id}`}
+                                                    src={`https://yoy.onrender.com/api/v1/product/product-photo/${p._id}`}
 
                                                     alt={p.name}
                                                     width="200px"
