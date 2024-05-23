@@ -108,7 +108,7 @@ const ProductDetails = () => {
       <div className="row container product-details-container">
         <div className="col-md-4 product-image-container" style={{ marginBottom: '1.5rem' }}> {/* Updated class names and added inline style */}
           <img
-            src={`/api/v1/product/product-photo/${product?._id}`}
+            src={`https://yoy.onrender.com/api/v1/product/product-photo/${product?._id}`}
             alt={product.name}
             height="200"
             width={"200px"}
