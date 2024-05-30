@@ -22,11 +22,13 @@
 
 .nav-link {
   font-weight: 300 !important;
+  text-decoration: none;
+  margin-left: 15px;
 }
 
-.active {
+/* .active {
   border-bottom: 2px solid black;
-}
+} */
 
 .navbar-brand {
   font-weight: 700;
@@ -142,4 +144,3 @@
   color: white;
   padding: 20px 0px;
 }
-

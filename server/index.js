@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const dotenv = require("dotenv");
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -11,49 +12,28 @@ const orderRouter = require("./routes/orderRoutes");
 const categoryRouter = require("./routes/categoryRoutes");
 const productRoutes = require("./routes/productRoutes");
 const path = require("path");
-const cors = require("cors");
-const corsConfig = {
-    origin: "*", // Allow requests from any origin
-    credentials: true, // Allow credentials (e.g., cookies, authorization headers)
-    methods: ["GET", "PUT", "POST", "DELETE"] // Allow specified HTTP methods
-};
-
-app.options('*', cors(corsConfig));
-
-// Apply CORS middleware to all routes
-app.use(cors(corsConfig));
-import { fileURLToPath } from "url";
 
 dotenv.config();
 
-// Connect to the database
 connectDb();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-// Middleware
+app.use(cors());
+
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../client/build')));
-//fgrfgtrfgfgrfgrf
 
-// Routes
+
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/user', userRouter);
 app.use('/api/v1/order', orderRouter);
 app.use('/api/v1/category', categoryRouter);
 app.use("/api/v1/product", productRoutes);
 
-// Welcome message route
-app.use('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
 
-// Port configuration
-const Port = process.env.PORT || 3000;
 
-// Listen to the port
+const Port = process.env.PORT || 8000;
+
 app.listen(Port, () => {
     console.log('Listening on port ' + Port);
 });

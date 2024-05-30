@@ -10,7 +10,7 @@ import { AuthProvider } from "./context/auth";
 import { SearchProvider } from "./context/search";
 import { CartProvider } from "./context/cart";
 import "antd/dist/reset.css";
-axios.defaults.baseURL = "https://yoy.onrender.com"
+axios.defaults.baseURL = "http://localhost:8080"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
