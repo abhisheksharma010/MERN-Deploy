@@ -60,7 +60,7 @@ const Login = () => {
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="form-control-login"
+              className=" form-control form-control-login"
               id="exampleInputEmail1"
               placeholder="Enter Your Email "
               required
@@ -71,7 +71,7 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="form-control-login"
+              className="form-control form-control-login"
               id="exampleInputPassword1"
               placeholder="Enter Your Password"
               required
