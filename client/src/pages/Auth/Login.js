@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Layout from '../../componenets/layout/Layout'
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import toast from "react-hot-toast";
-import "../../styles/AuthStyle.css";
+import "../../styles/Login.css";
 import { useAuth } from "../../context/auth";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +18,7 @@ const Login = () => {
   const googlesign = () => {
     window.open("http://localhost:8080/auth/google/callback", "_self")
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -41,11 +43,16 @@ const Login = () => {
       toast.error("Something went wrong");
     }
   };
+
   return (
     <Layout title="Register - Ecommer App">
-      <div className="form-container ">
-        <form onSubmit={handleSubmit}>
-          <h4 className="title">LOGIN FORM</h4>
+      <h1 className="title">LOGIN FORM</h1>
+      <div className="login-form-container">
+        <div className="login-form-image">
+          <img src="https://img.freepik.com/premium-photo/online-shopping-concept-web-mobile-application-ecommerce-smartphone-with-shopping-cart-shopping-bag-yellow-background-3d-rendering_20693-1081.jpg" alt="Registration" />
+        </div>
+        <form onSubmit={handleSubmit} className="login-form">
+          <h4 className="title-in">LOGIN</h4>
 
           <div className="mb-3">
             <input
@@ -53,7 +60,7 @@ const Login = () => {
               autoFocus
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
+              className="form-control-login"
               id="exampleInputEmail1"
               placeholder="Enter Your Email "
               required
@@ -64,33 +71,39 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="form-control"
+              className="form-control-login"
               id="exampleInputPassword1"
               placeholder="Enter Your Password"
               required
             />
           </div>
-          <div className="mb-3">
+
+
+          <button type="submit" className="btn btn-primary login-btn">
+            LOGIN
+          </button>
+          <div>
+            <p className="create-account-link forgotten"><Link to="/forgot-password">Forgotten Password ?</Link></p>
+            <p className="create-account-link">Don't have an account? <Link to="/register">Create</Link></p>
+          </div>
+        </form>
+
+        {/* <button type="submit" className="btn btn-primary login" onClick={googlesign}>
+          Google
+        </button>
+           <div className="mb-3">
             <button
               type="button"
-              className="btn "
+              className="btn forgot-password-btn"
               onClick={() => {
                 navigate("/forgot-password");
               }}
             >
               Forgot Password
             </button>
-          </div>
-
-          <button type="submit" className="btn btn-primary login">
-            LOGIN
-          </button>
-
-        </form>
-        {/* <button type="submit" className="btn btn-primary login" onClick={googlesign}>
-          Google
-        </button> */}
+          </div> */}
       </div>
+
     </Layout>
   );
 };

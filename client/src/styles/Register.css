@@ -38,7 +38,12 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.create-account-link {
+  margin-top: 12px;
 
+  text-align: center;
+  align-content: center;
+}
 .register-form-step .btn {
   display: block;
   width: 100px;
@@ -74,7 +79,7 @@
   align-items: center;
   width: 70%;
   margin: auto;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   position: relative;
   z-index: 2;
 }
@@ -82,7 +87,10 @@
 .register-step {
   width: 40px;
   height: 40px;
+  margin-left: 8px;
+  margin-bottom: 20px;
   border-radius: 50%;
+  position: absolute;
   background-color: #facc6b;
   display: flex;
   align-items: center;
@@ -106,6 +114,35 @@
 } */
 
 /* Styles for desktop and tablet devices */
+.step-title {
+  color: rgb(195, 193, 193);
+  font-size: 16px;
+  margin-bottom: 5px;
+  align-items: center;
+}
+.register-step:after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #f4ac32;
+  position: absolute;
+  left: 0;
+  top: 21px;
+  z-index: -1;
+}
+.register-step::before {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #f4ac32;
+  position: absolute;
+  right: 0;
+  top: 21px;
+  z-index: -1;
+}
+.active-title {
+  color: black;
+}
 @media (min-width: 769px) {
   .register-form-container {
     height: 400px;
@@ -131,7 +168,14 @@
     max-width: 90vw;
     height: 400px;
   }
-
+  .register-step::before {
+    content: "";
+    width: 100px;
+  }
+  .register-step::after {
+    content: "";
+    width: 100px;
+  }
   .register-form-image img {
     max-width: 300px;
     border-radius: 15px;
@@ -142,7 +186,14 @@
   .register-form-image {
     display: none;
   }
-
+  .register-step::before {
+    content: "";
+    width: 80px;
+  }
+  .register-step::after {
+    content: "";
+    width: 80px;
+  }
   .register-form-container {
     max-width: 90vw;
     height: 400px;

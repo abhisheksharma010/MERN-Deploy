@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../../componenets/layout/Layout';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/Register.css"; // Make sure this path is correct
 
@@ -20,6 +20,17 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleNextStep = () => {
+    if (step === 1 && (!formData.name || !formData.email)) {
+      toast.error("Please fill in all fields");
+      return;
+    } else if (step === 2 && (!formData.phone || !formData.address)) {
+      toast.error("Please fill in all fields");
+      return;
+    } else if (step === 3 && (!formData.password || !formData.confirmPassword || !formData.answer)) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
     setStep(step + 1);
   };
 
@@ -50,6 +61,7 @@ const Register = () => {
       toast.error("Something went wrong");
     }
   };
+  const steps = ["Personal", "Contact", "Password"];
 
   return (
     <Layout title="Register - Ecommerce App">
@@ -60,21 +72,24 @@ const Register = () => {
         </div>
         <form onSubmit={handleSubmit} className="register-form">
 
-          <div>
-            <div className="register-steps">
-              <hr className='line-connect' />
-              {[1, 2, 3].map((num) => (
-                <div
-                  key={num}
-                  className={`register-step ${step >= num ? 'active' : ''}`}
-                  onClick={() => setStep(num)}
-                >
-                  {num}
-                </div>
-              ))}
-            </div>
+          <div className="register-steps">
+            <hr className='line-connect' />
+            {steps.map((title, num) => (
 
+              <div
+                key={num}
+
+              >
+                <div className={`step-title ${step == num + 1 ? 'active-title' : ''}`}>{title}</div>
+                <div className={`register-step ${step >= num + 1 ? 'active' : ''}`}
+                  onClick={() => setStep(num)}>
+                  {num + 1}</div>
+
+
+              </div>
+            ))}
           </div>
+
           {step === 1 && (
             <div className="register-form-step">
               <div className="form-group">
@@ -109,7 +124,7 @@ const Register = () => {
             <div className="register-form-step">
               <div className="form-group">
                 <input
-                  type="text"
+                  type="number"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
@@ -182,8 +197,12 @@ const Register = () => {
                   Register
                 </button>
               </div>
+
             </div>
           )}
+          <div>
+            <p className="create-account-link">Already have an account? <Link to="/login">Login</Link></p>
+          </div>
         </form>
       </div>
     </Layout>
