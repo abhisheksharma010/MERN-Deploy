@@ -234,14 +234,14 @@
 
 .banner-content {
   margin: 28vh;
-  margin-top: 20vh;
+  margin-top: 10vh;
   display: flex;
 }
 
 .banner-content img {
-  height: 350px;
+  height: 550px;
   border-radius: 20px;
-  width: 350px; /* Adjust the width as needed */
+  width: 450px; /* Adjust the width as needed */
 }
 
 .banner-text {
@@ -437,4 +437,8 @@
   background-color: #0056b3;
   letter-spacing: 2px;
   text-decoration: underline;
+}
+.products-section {
+  justify-content: space-around;
+  align-items: center;
 }

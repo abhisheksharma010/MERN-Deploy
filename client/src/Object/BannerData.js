@@ -11,7 +11,7 @@ const BannerData = [
     id: uuid(),
     title: "📱 Apple iPhone 15 Pro",
     bannerImage: "../images/iphone.png",
-    details: "Unlock extraordinary performance and innovation with the Apple iPhone 15 Pro: redefining smartphone excellence.",
+    details: "Unlock extraordinary performance and innovation with the Apple iPhone 15 Pro:",
   },
   {
     id: uuid(),
