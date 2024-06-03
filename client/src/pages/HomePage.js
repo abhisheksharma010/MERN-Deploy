@@ -334,7 +334,7 @@ const HomePage = () => {
               <ProductCard key={p._id} product={p} />
             ))}
           </div>
-          <div className=" p-3">
+          <div className="loadmore-section p-3">
             {products && products.length < total && (
               <button
                 className="btn btn-warning"
@@ -353,38 +353,35 @@ const HomePage = () => {
         </div>
         <section className="facility__section section" id="facility">
           <div className="container">
-            <div
-              className="facility__contianer"
-              data-aos="fade-up"
-              data-aos-duration={1200}
-            >
+            <div className="facility__container" data-aos="fade-up" data-aos-duration={1200}>
               <div className="facility__box">
                 <div className="facility-img__container">
-                  <img src={car} alt="" />
+                  <img src={car} alt="Car icon" />
                 </div>
-                <p>FREE SHIPPING WORLD WIDE</p>
+                <p>FREE SHIPPING WORLDWIDE</p>
               </div>
               <div className="facility__box">
                 <div className="facility-img__container">
-                  <img src={money} alt="" />
+                  <img src={money} alt="Money icon" />
                 </div>
                 <p>100% MONEY BACK GUARANTEE</p>
               </div>
               <div className="facility__box">
                 <div className="facility-img__container">
-                  <img src={card} alt="" />
+                  <img src={card} alt="Card icon" />
                 </div>
-                <p>MANY PAYMENT GATWAYS</p>
+                <p>MANY PAYMENT GATEWAYS</p>
               </div>
               <div className="facility__box">
-                <div className="facility-img__container">
-                  <img src={call} alt="" />
+                <div className="facility-img__container call">
+                  <img src={call} alt="Call icon" />
                 </div>
                 <p>24/7 ONLINE SUPPORT</p>
               </div>
             </div>
           </div>
         </section>
+
 
       </Layout >
     </>

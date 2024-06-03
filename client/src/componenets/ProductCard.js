@@ -4,6 +4,7 @@ import "../styles/ProductCard.css";
 import { useCart } from '../context/cart';
 import { CiHeart } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
+
 import { useAuth } from "../context/auth";
 import toast from "react-hot-toast";
 import { FaRegStar, FaStar } from "react-icons/fa";
