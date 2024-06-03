@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../../componenets/layout/Layout';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import "../../styles/Login.css";
 import "../../styles/AuthStyle.css";
@@ -78,6 +78,9 @@ const ForgotPasssword = () => {
           <button type="submit" className="btn btn-primary login-btn">
             RESET
           </button>
+          <div>
+            <p className="create-account-forgot">Remembered your password? <Link to="/login">Login</Link></p>
+          </div>
         </form>
       </div>
     </Layout>
