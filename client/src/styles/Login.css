@@ -90,7 +90,11 @@
 .login-btn {
   margin-top: 12px;
 }
+.create-account-forgot {
+  text-align: end;
 
+  margin: 10px;
+}
 /* Media Queries */
 @media (max-width: 1400px) {
   .login-form-container {
