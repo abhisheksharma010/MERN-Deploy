@@ -65,6 +65,10 @@
   font-size: 1rem;
   margin: 0.5rem; /* Adjust as needed */
 }
+.custom-category,
+.custom-heading {
+  cursor: pointer;
+}
 
 .custom-filter-content {
   width: 100%;
@@ -324,16 +328,13 @@
   display: inline-block;
   margin-top: 10px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #f8ce42;
   color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 }
 
-.shop-now:hover {
-  background-color: #0056b3;
-}
 .shop-now {
   position: absolute;
   top: 100%; /* Initially positioned below the card */
@@ -348,7 +349,7 @@
 }
 
 .shop-now:hover {
-  background-color: #0056b3;
+  background-color: #f8ce42;
   letter-spacing: 2px;
   text-decoration: underline;
 }
