@@ -48,14 +48,20 @@ const Purchase = () => {
     };
 
     const handlePurchase = async () => {
+        const quan = quantity
         try {
             const response = await axios.post('/api/v1/order/add-order', {
                 address,
-                quantity,
+                quan,
                 productId: product._id,
             });
             navigate(`/dashboard/user/orders`);
+
+
+            // Handle success (e.g., show a success message, redirect, etc.)
+            console.log(response.data);
         } catch (error) {
+            // Handle error (e.g., show an error message)
             console.error('Error making purchase:', error);
         }
     };
